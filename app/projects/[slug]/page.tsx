@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
+import Image from "next/image";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -18,7 +19,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <main className="px-6 py-[clamp(2.5rem,6vh,4.5rem)] pb-24 text-white">
+    <main className="px-6   overflow-y-auto py-[clamp(2.5rem,6vh,4.5rem)] pb-24 text-white">
       <div className="mx-auto w-full max-w-5xl">
         <div className="relative mb-6 flex items-center justify-center">
           <h1 className="text-center text-[clamp(1.25rem,2.2vw,1.6rem)] font-medium text-white/90">
@@ -61,11 +62,18 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             </div>
 
             <div className="rounded-[26px] border border-white/15 bg-white/10 p-6">
-              <h2 className="text-lg font-medium text-white/90">Preview</h2>
-              <p className="mt-3 text-sm text-white/65">
-                Project image goes here
-              </p>
-            </div>
+  <h2 className="text-lg font-medium text-white/90">Preview</h2>
+
+  <div className="mt-4 overflow-hidden rounded-[20px]">
+    <Image
+      src={project.image}
+      alt={project.name}
+      width={600}
+      height={400}
+      className="w-full h-auto object-cover"
+    />
+  </div>
+</div>
 
             <div className="rounded-[26px] border border-white/15 bg-white/10 p-6 md:col-span-2">
               <h2 className="text-lg font-medium text-white/90">Description</h2>

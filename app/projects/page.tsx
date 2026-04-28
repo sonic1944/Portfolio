@@ -6,85 +6,62 @@ export default function ProjectsPage() {
   return (
     <main className="px-6 py-[clamp(2.5rem,6vh,4.5rem)] pb-24 text-white">
       <div className="mx-auto w-full max-w-4xl">
-        {/* Top bar: centered title + home button right */}
-        <div className="relative mb-6 flex items-center justify-center">
-          <h1 className="text-center text-[clamp(1.25rem,2.2vw,1.6rem)] font-medium text-white/90">
+        {/* Top bar */}
+        <header className="relative mb-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <h1 className="max-w-[14rem] text-center text-[clamp(1.5rem,9vw,2.5rem)] font-medium leading-tight text-white/90 sm:max-w-none sm:text-[clamp(1.25rem,2.2vw,1.6rem)]">
             Learn more about my projects
           </h1>
 
           <Link
             href="/discover"
-            className="absolute right-0 inline-flex items-center justify-center
-                       rounded-full px-4 py-2 text-sm
-                       bg-white/10 backdrop-blur-md border border-white/20
-                       text-white/90 hover:bg-white hover:text-black transition
-                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            className="inline-flex items-center justify-center rounded-full bg-white/10 px-5 py-2 text-sm text-white/90 backdrop-blur-xl ring-1 ring-white/15 transition hover:bg-white/15 sm:absolute sm:right-0"
           >
             Get Back
           </Link>
-        </div>
+        </header>
 
-        {/* Big glass panel */}
-        <section
-          className="
-            relative overflow-hidden
-            rounded-[28px]
-            border border-white/15
-            bg-white/10
-            backdrop-blur-md
-            shadow-[0_20px_60px_rgba(0,0,0,0.25)]
-            p-8 sm:p-10
-          "
-        >
+        <GlassPanel className="p-8 sm:p-10">
           <h2 className="text-xl font-medium text-white/90">Projects</h2>
 
-          {/* Project cards */}
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {projects.map((project) => (
-              <Link
-                key={project.slug}
-                href={`/projects/${project.slug}`}
-                className="
-                  rounded-[26px]
-                  border border-white/15
-                  bg-white/10
-                  backdrop-blur-md
-                  p-6
-                  transition
-                  hover:bg-white/15 hover:border-white/25
-                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40
-                "
-              >
-                <h3 className="text-lg font-medium text-white/90">
-                  {project.name}
-                </h3>
-
-                <p className="mt-3 text-sm leading-relaxed text-white/65">
-                  {project.description}
-                </p>
-              </Link>
+              <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
 
-          {/* GitHub button */}
           <div className="mt-10 flex justify-center">
             <a
               href="https://github.com/sonic1944"
               target="_blank"
               rel="noopener noreferrer"
-              className="
-                inline-flex items-center justify-center
-                rounded-full px-6 py-3 text-sm
-                bg-white/10 backdrop-blur-md border border-white/20
-                text-white/90 hover:bg-white hover:text-black transition
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40
-              "
+              className="inline-flex items-center justify-center rounded-full bg-white/10 px-6 py-3 text-sm text-white/90 backdrop-blur-xl ring-1 ring-white/15 transition hover:bg-white/15"
             >
               Other projects on GitHub
             </a>
           </div>
-        </section>
+        </GlassPanel>
       </div>
     </main>
+  );
+}
+
+function GlassPanel({
+  className = "",
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section
+      className={[
+        "rounded-[2.25rem] bg-white/10 backdrop-blur-xl",
+        "ring-1 ring-white/15",
+        "shadow-[0_20px_60px_rgba(0,0,0,0.35)]",
+        className,
+      ].join(" ")}
+    >
+      {children}
+    </section>
   );
 }

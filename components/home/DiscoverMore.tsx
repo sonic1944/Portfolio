@@ -8,17 +8,12 @@ export default function DiscoverMore() {
         <Link
           href="/"
           className="
-            fixed bottom-6 right-6
-            grid place-items-center
-            h-12 w-12
-            rounded-full
-            bg-white/10 backdrop-blur-xl
-            ring-1 ring-white/20
-            text-white text-xl
-            cursor-pointer
-            transition
-            hover:bg-white/20 hover:-translate-y-0.5
-          "
+  fixed bottom-6 right-6 z-50
+  inline-flex items-center justify-center
+  rounded-full bg-white/10 px-5 py-2 text-sm text-white/90
+  backdrop-blur-xl ring-1 ring-white/15
+  transition hover:bg-white/15
+"
         >
           ×
         </Link>

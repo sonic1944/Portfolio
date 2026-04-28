@@ -7,13 +7,13 @@ export default function AboutPage() {
       <div className="mx-auto w-full max-w-md sm:max-w-lg">
         {/* Top bar */}
         <header className="relative mb-6 flex items-center justify-center">
-          <h1 className="text-center text-[clamp(1.25rem,2.2vw,1.6rem)] font-medium text-white/90">
+          <h1 className="text-center text-[clamp(1.5rem,8vw,3.5rem)] font-medium text-white/90">
             Discover more about me
           </h1>
 
           <Link
             href="/discover"
-            className="absolute right-0 inline-flex items-center justify-center rounded-full bg-white/10 px-5 py-2 text-sm text-white/90 backdrop-blur-xl ring-1 ring-white/15 transition hover:bg-white/15"
+             className="inline-flex items-center justify-center rounded-full bg-white/10 px-5 py-2 text-sm text-white/90 backdrop-blur-xl ring-1 ring-white/15 transition hover:bg-white/15 sm:absolute sm:right-0"
           >
             Home
           </Link>

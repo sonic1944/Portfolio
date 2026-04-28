@@ -4,7 +4,7 @@ export type Project = {
   description: string;
   techStack: string[];
   githubUrl?: string;
-  image?: string;
+  image: string;
 };
 
 export const projects: Project[] = [
@@ -14,7 +14,7 @@ export const projects: Project[] = [
     description: "A clone of the ChatGPT interface built with Python.",
     techStack: ["Python", "API", "HTML", "CSS"],
     githubUrl: "https://github.com/sonic1944/chatgpt-clone",
-    image: "/images/projects/chatgpt-clone.png",
+    image: "/images/projects/chatgpt.png",
   },
   {
     slug: "pokedex",
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     description: "A browser-based trivia project built with JavaScript.",
     techStack: ["HTML", "JavaScript", "CSS"],
     githubUrl: "https://github.com/sonic1944/trivia-game",
-    image: "/images/projects/trivia-game.png",
+    image: "/images/projects/quiz.png",
   },
   {
     slug: "pixel-grid",
@@ -38,6 +38,6 @@ export const projects: Project[] = [
     description: "A full-stack pixel grid app with interactive functionality.",
     techStack: ["React", "JavaScript", "CSS"],
     githubUrl: "https://github.com/sonic1944/pixel_grid",
-    image: "/images/projects/pixel-grid.png",
+    image: "/images/projects/pixel_grid.png",
   },
 ];
