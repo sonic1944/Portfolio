@@ -12,7 +12,7 @@ export const projects: Project[] = [
     slug: "chatgpt-clone",
     name: "ChatGPT Clone",
     description: "A clone of the ChatGPT interface built with Python.",
-    techStack: ["Python", "API", "HTML", "CSS"],
+    techStack: ["Python", "API"],
     githubUrl: "https://github.com/sonic1944/chatgpt-clone",
     image: "/images/projects/chatgpt.png",
   },
